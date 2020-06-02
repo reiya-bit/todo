@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: skyblue;
+}
+
+.app_titile {
+  color: white;
+  text-align: center;
+}
+
+.add_btn {
+  background-color: white;
+  text-decoration: none;
+  border: solid 1px black;
+  color: skyblue;
+  padding: 3px 5px;
+}
+
+.index_ul {
+  list-style: none;
+}
+
+.taskbox {
+  background-color: white;
+
+  margin: 20px 0;
+  padding: 20px;
+  width: 50%;
+  position: relative;
+}
+
+.btn_set {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+}
+
+.ed_de_btn {
+  background-color: skyblue;
+  text-decoration: none;
+  border: solid 1px black;
+  color: white;
+  padding: 3px 5px;
+}
