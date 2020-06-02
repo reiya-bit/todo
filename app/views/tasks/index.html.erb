@@ -1,0 +1,7 @@
+<ul class="index_ul">
+  <% @tasks.each do |task| %>
+  <li class="index_tile"><%= task.title %></li>
+  <li class="index_content"><%= task.content %></li>
+  <li class="index_deadline"><%= task.deadline %></li>
+  <%  end %>
+</ul>
