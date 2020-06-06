@@ -1,7 +1,5 @@
-<%= link_to( '追加', new_task_path,{class: "add_btn"} )%>
-<ul class="index_ul">
- 
-  <% @tasks.each do |task| %>
+<% @tasks.each do |task| %>
+<%if task.project==="その他"%>
    <div class="taskbox">
   <li class="index_tile">タイトル：<%= task.title %></li>
   <li class="index_content">内容：<%= task.content %></li>
@@ -14,10 +12,8 @@
   <td><%= link_to '削除', task_path(task), method: :delete, class: "ed_de_btn" %></td>
   </div>
     </div>
-  <%  end %>
+<%  end %>
+<%  end %>
 
-</ul>
 
-<%= link_to '仕事', work_path, method: :get, class: "ed_de_btn" %>
-<%= link_to '趣味', hobby_path, method: :get, class: "ed_de_btn" %>
-<%= link_to 'その他', other_path, method: :get, class: "ed_de_btn" %>
+

@@ -45,10 +45,26 @@ class TasksController < ApplicationController
       
     end
 
+    def show
+
+    end
+
     def destroy
       @task = Task.find(params[:id])
       @task.destroy
       redirect_to tasks_path
+    end
+
+    def work
+      @tasks = Task.all
+    end
+
+    def hobby
+      @tasks = Task.all
+    end
+
+    def other
+      @tasks = Task.all
     end
   
     private
