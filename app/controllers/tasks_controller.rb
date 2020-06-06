@@ -9,17 +9,19 @@ class TasksController < ApplicationController
   
     def create
       
-      Task.create(task_params)
-      redirect_to tasks_path
+      # Task.create(task_params)
+      # redirect_to tasks_path
+
       params[:project].each do | di1,di2 |
 
         # チェックボックスにチェックがついている場合
         if di2 == "1"
           # DBのtitleカラムにタイトルを格納し保存
-          Task.create(project:di1)
+          Task.create(project:di1,title:params[:title],content:params[:content],deadline:params[:deadline])
           
         end
       end 
+      redirect_to tasks_path
       
     end
 
@@ -31,6 +33,7 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
       @task.update(task_params)
       redirect_to tasks_path
+      
     end
 
     def destroy
