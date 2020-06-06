@@ -31,7 +31,16 @@ class TasksController < ApplicationController
   
     def update
       @task = Task.find(params[:id])
-      @task.update(task_params)
+    
+      params[:project].each do | di1,di2 |
+
+        # チェックボックスにチェックがついている場合
+        if di2 == "1"
+          # DBのtitleカラムにタイトルを格納し保存
+          @task.update(project:di1,title:params[:title],content:params[:content],deadline:params[:deadline])
+          
+        end
+      end 
       redirect_to tasks_path
       
     end
