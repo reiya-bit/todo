@@ -11,6 +11,16 @@ class TasksController < ApplicationController
       
       Task.create(task_params)
       redirect_to tasks_path
+      params[:project].each do | di1,di2 |
+
+        # チェックボックスにチェックがついている場合
+        if di2 == "1"
+          # DBのtitleカラムにタイトルを格納し保存
+          Task.create(project:di1)
+          
+        end
+      end 
+      
     end
 
     def edit
