@@ -1,4 +1,5 @@
 <%= link_to( '追加', new_task_path,{class: "add_btn"} )%>
+<div class="content">
 <ul class="index_ul">
  
   <% @tasks.each do |task| %>
@@ -8,7 +9,7 @@
   <li class="index_project">プロジェクト：<%= task.project %></li>
 
 
-  <li class="index_deadline">期日：：<%= task.deadline.strftime("%Y年%-m月%-d日") %></li>
+  <li class="index_deadline">期日：<%= task.deadline.strftime("%Y年%-m月%-d日") %></li>
   <div class="btn_set">
   <td ><%= link_to '変更', edit_task_path(task), class: "ed_de_btn" %></td>
   <td><%= link_to '削除', task_path(task), method: :delete, class: "ed_de_btn" %></td>
@@ -17,7 +18,10 @@
   <%  end %>
 
 </ul>
-
-<%= link_to '仕事', work_path, method: :get, class: "add_btn" %>
-<%= link_to '趣味', hobby_path, method: :get, class: "add_btn" %>
-<%= link_to 'その他', other_path, method: :get, class: "add_btn" %>
+<div class="projectbox">
+<div class="p_title">プロジェクト</div>
+<%= link_to '仕事', work_path, method: :get, class: "add_btn p_btn" %>
+<%= link_to '趣味', hobby_path, method: :get, class: "add_btn p_btn" %>
+<%= link_to 'その他', other_path, method: :get, class: "add_btn p_btn" %>
+</div>
+</div>

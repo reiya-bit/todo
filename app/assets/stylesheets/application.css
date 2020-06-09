@@ -18,6 +18,9 @@ body {
   background-color: skyblue;
   list-style: none;
 }
+ul {
+  padding: 0;
+}
 
 .app_titile {
   color: white;
@@ -34,14 +37,15 @@ body {
 
 .index_ul {
   list-style: none;
+  width: 60%;
 }
 
 .taskbox {
   background-color: white;
 
-  margin: 20px 0;
+  margin: 20px;
   padding: 20px;
-  width: 50%;
+
   position: relative;
 }
 
@@ -57,4 +61,35 @@ body {
   border: solid 1px black;
   color: white;
   padding: 3px 5px;
+}
+
+.content {
+  display: flex;
+}
+.projectbox {
+  width: 20%;
+  margin: 50px auto;
+  padding: 20px;
+  border: solid white 3px;
+  height: 20%;
+}
+.p_btn {
+  display: block;
+  text-align: center;
+  margin: 20px 10px;
+}
+
+.p_title {
+  color: white;
+  font-size: large;
+  font-weight: bold;
+}
+
+.form_box {
+  text-align: center;
+}
+
+.form {
+  display: block;
+  margin: 10px auto;
 }

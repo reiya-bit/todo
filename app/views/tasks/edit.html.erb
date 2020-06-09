@@ -1,12 +1,22 @@
+<div class="form_box">
 <%= form_tag("/tasks/#{@task.id}", method: :patch) do %>
-      <input type="text" name="title" placeholder="タイトル">
-      <textarea name="content" placeholder="内容" rows="10" cols="30"></textarea>
-      <ul style="list-style:none;">
-     <li><%= check_box "project", "仕事", {} %>仕事</li>
-     <li><%= check_box "project", "趣味", {} %>趣味</li>
-     <li><%= check_box "project", "その他", {} %>その他</li>
+      タイトル
+      <input type="text" name="title" placeholder="タイトル" class="form">
+      内容
+      <textarea name="content" placeholder="内容" rows="10" cols="30" class="form"></textarea>
+      <div class="form">
+      プロジェクト
+      <ul style="list-style:none; " >
+     <li><%= check_box "project", "仕事", {:checked => "checked"},class: "checkbox",id:'work' %>仕事</li>
+     <li><%= check_box "project", "趣味", {} ,class: "checkbox",id:'hobby'%>趣味</li>
+     <li><%= check_box "project", "その他", {},class: "checkbox",id:'other' %>その他</li>
    </ul>
-      <input type="date" name="deadline" value="2020-06-01">
-      <input type="submit" value="SENT">
+   </div>
+   期日
+      <input type="date" name="deadline" value="2020-06-01" class="form">
+     
+
+      <input type="submit" value="変更" class="form add_btn">
     <% end %>
-<%= link_to '戻る', tasks_path %>
+     </div>
+<%= link_to '戻る', tasks_path ,class: "add_btn"%>
