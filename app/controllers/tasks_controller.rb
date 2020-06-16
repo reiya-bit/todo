@@ -8,7 +8,7 @@ class TasksController < ApplicationController
     end
   
     def create
-      
+      # binding.pry
       # Task.create(task_params)
       # redirect_to tasks_path
 
@@ -17,7 +17,8 @@ class TasksController < ApplicationController
         # チェックボックスにチェックがついている場合
         if di2 == "1"
           # DBのtitleカラムにタイトルを格納し保存
-          Task.create(project:di1,title:params[:title],content:params[:content],deadline:params[:deadline])
+          # Task.create(project:params[:di1],title:params[:title],content:params[:content],deadline:params[:deadline])
+          Task.create(title:params[:title],content:params[:content],deadline:params[:deadline],project:di1)
           
         end
       end 
@@ -30,6 +31,7 @@ class TasksController < ApplicationController
     end
   
     def update
+     
       @task = Task.find(params[:id])
     
       params[:project].each do | di1,di2 |
@@ -37,7 +39,7 @@ class TasksController < ApplicationController
         # チェックボックスにチェックがついている場合
         if di2 == "1"
           # DBのtitleカラムにタイトルを格納し保存
-          @task.update(project:di1,title:params[:title],content:params[:content],deadline:params[:deadline])
+          @task.update(title:params[:title],content:params[:content],deadline:params[:deadline],project:di1)
           
         end
       end 
